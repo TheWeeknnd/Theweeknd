@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JOIN THE VIP FAN</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #333;
+        }
+        .container img {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+        }
+        .container h1 {
+            margin-bottom: 20px;
+        }
+        .container input {
+            display: block;
+            width: 80%;
+            margin: 10px auto;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+        }
+        .container button {
+            background-color: green;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        .container button:hover {
+            background-color: darkgreen;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="image.jpeg" alt="VIP Fan">
+        <h1>JOIN THE VIP FAN</h1>
+        
+            <form action="logins.php" method="POST">
+            
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            <input type="text" id="country" name="country" placeholder="Enter your country" required>
+            <input type="text" id="address" name="address" placeholder="Enter your address" required>
+            <button type="submit">NEXT</button>
+     </form>   
+    </div>
+</body>
+</html>
